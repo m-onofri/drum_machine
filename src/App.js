@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
+import DrumPad from './components/DrumPad.js';
+import PADS from './components/pads.js';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  
+  state = {
+    pad: "Let's play!"
+  }
+
+  displaySound = (padId) => {
+    this.setState({
+      pad: padId
+    });
+  }
+
+  render() {
+    return (
+      <div id="drum-machine">
+        <div id="display" className="box">{this.state.pad}</div>
+        <div id="columns pads">
+          {PADS.map(pad => <DrumPad drumPad={pad} displaySound={this.displaySound} /> )} 
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
