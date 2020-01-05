@@ -25,7 +25,7 @@ npm start
 In your browser, go to http://localhost:3000/, and have a look at the app.
 
 
-# ...or watch it live!
+## ...or watch it live!
 
 You can have a look at the app [here](https://m-onofri.github.io/drum-machine/).
 
